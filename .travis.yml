@@ -6,24 +6,22 @@ before_script:
 - sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
 - sudo sh -c 'wget -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
   add -'
-#- sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 - sudo apt-get update
 - sudo apt-get install opera
-#- sudo apt-get install google-chrome-stable
 node_js:
 - 0.1
 deploy:
   provider: heroku
-  app: angularjs-crypto
+  app: angularjs-encoding-patch
   strategy: git
   api_key:
-    secure: nQ9G863kXSWi+AC/Xreiz1/bGTikFfU+0MNQY6NkvMh3A7vJjQP52cpOcVsSnJi8oekTYrbJDj/aswSSXSoJI5ftvxjBU5GwGyB6gjJQRtMGMn3IBgc9X19vW4NGqX5Y2aQRoJOfHy2A1sKrkycfEdy/x8Z3jhoPHG1+Pi0lLNQ=
+    secure: ehyCkOromZiMMBFq40mNHFQBae+Pex6nCizHAMDPu/cCTDAF0GK5S+XLPj03saYi8Qd12XWr22tSx/pRBR7iHXbuJmpYbDCDIDOmV4IsdMq9HDDAGzv35BYQQxKkGuVraJNIFSOAfQe5I3t4yUBwRj9NhrfbrsyiucuFit6xegg=
 before_deploy:
 - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
 notifications:
   webhooks:
     urls:
-      - https://webhooks.gitter.im/e/69a4be3312f3f3a0a25b
-    on_success: always  # options: [always|never|change] default: always
-    on_failure: always  # options: [always|never|change] default: always
-    on_start: false     # default: false
+    - https://webhooks.gitter.im/e/69a4be3312f3f3a0a25b
+    on_success: always
+    on_failure: always
+    on_start: false
