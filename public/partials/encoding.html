@@ -1,0 +1,44 @@
+<h1>Simple variable example</h1>
+
+One services EncodingService with three methods is defined
+
+<pre class="prettyprint">
+	<code>
+	angular.module('Services', ['ngResource'], function ($provide) {
+
+	    $provide.factory('EncodingService', function ($resource, $rootScope) {
+		var resource = $resource('/url:uriParts', {}, {
+		    encodingTrue: {method: 'GET', encoding: true},
+		    encodingFalse: {method: 'GET', encoding: false},
+		    encodingDefault: {method: 'GET'}
+		});
+		return resource;
+	    });
+	});
+	</code>
+</pre>
+
+<pre class="prettyprint">
+	<code>
+	var myAppDev = angular.module('demoApp-Mock', ['demoApp', 'ngMockE2E']);
+
+	myAppDev.run(["$httpBackend", function ($httpBackend) {
+	    var user = {name: 'Sandra'};
+	    $httpBackend.whenGET('/url/partial/url').respond({url:'/url/partial/url'});
+	    $httpBackend.whenGET('/url%2Fpartial%2Furl').respond({url:'/url%2Fpartial%2Furl'});
+	    $httpBackend.whenGET(/partials\/.*/).passThrough();
+	}]);
+	</code>
+</pre>
+
+<div>
+Response of encodingTrue with parameter uriParts:'/partial/url' = {{encodingTrue}}
+</div>
+
+<div>
+Response of encodingFalse with parameter uriParts:'/partial/url' = {{encodingFalse}}
+</div>
+
+<div>
+Response of encodingDefault with parameter uriParts:'/partial/url' = {{encodingDefault}}
+</div>
