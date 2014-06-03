@@ -5,8 +5,8 @@
 [![Dependencies](https://david-dm.org/pussinboots/angularjs-decode-uri.png)](https://david-dm.org/pussinboots/angularjs-decode-uri)
 [![Heroku](http://heroku-badge.heroku.com/?app=angularjs-decode-uri)](https://angularjs-decode-uri.herokuapp.com)
 
+AngularJS modul to decode uri params in http definitions. Implements the feature of the [Pull Request](https://github.com/angular/angular.js/pull/7652) to angularjs resource modul, as http interceptor.
 
-Show case for the [Pull Request](https://github.com/angular/angular.js/pull/7652) to angularjs resource modul.
 For the live example click on the heroku badge on the top.
 
 ##Install (manual)
@@ -36,6 +36,40 @@ angular.module('services', ['ngResource'], function ($provide) {
             decodingTrue: {method: 'GET', decodeuri: true},
             decodingFalse: {method: 'GET', decodeuri: false},
             decodingDefault: {method: 'GET'}
+        });
+        return resource;
+    });
+});
+```
+
+
+##Examples
+
+#### Multi ng resource service
+
+```js
+'use strict';
+
+angular.module('services', ['ngResource'], function ($provide) {
+   $provide.factory('Service', function ($resource, $rootScope) {
+        var resource = $resource('/url:uriParts', {}, {
+            getProfile: {method: 'GET', params:{uriParts:'/profile/me'}, decodeuri: true},
+            getPosts: {method: 'GET', params:{uriParts:'/posts/me'}, decodeuri: true}
+        });
+        return resource;
+    });
+});
+```
+#### proxy service
+
+```js
+'use strict';
+
+angular.module('services', ['ngResource'], function ($provide) {
+   $provide.factory('Proxy', function ($resource, $rootScope) {
+        var resource = $resource('/url:uriParts', {}, {
+            getProfile: {method: 'GET', params:{uriParts:'http://www.google.de'}, decodeuri: true},
+            getPosts: {method: 'GET', params:{uriParts:'http://www.web.de'}, decodeuri: true}
         });
         return resource;
     });
