@@ -12,7 +12,7 @@ node_js:
 - 0.1
 deploy:
   provider: heroku
-  app: angularjs-decoding-uri
+  app: angularjs-decode-uri
   strategy: git
   api_key:
     secure: ehyCkOromZiMMBFq40mNHFQBae+Pex6nCizHAMDPu/cCTDAF0GK5S+XLPj03saYi8Qd12XWr22tSx/pRBR7iHXbuJmpYbDCDIDOmV4IsdMq9HDDAGzv35BYQQxKkGuVraJNIFSOAfQe5I3t4yUBwRj9NhrfbrsyiucuFit6xegg=
