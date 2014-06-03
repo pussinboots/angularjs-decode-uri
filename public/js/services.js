@@ -4,11 +4,11 @@
 
 angular.module('Services', ['ngResource'], function ($provide) {
 
-    $provide.factory('EncodingService', function ($resource, $rootScope) {
+    $provide.factory('DecodingService', function ($resource, $rootScope) {
         var resource = $resource('/url:uriParts', {}, {
-            encodingTrue: {method: 'GET', encoding: true},
-            encodingFalse: {method: 'GET', encoding: false},
-            encodingDefault: {method: 'GET'}
+            decodingTrue: {method: 'GET', decodeuri: true},
+            decodingFalse: {method: 'GET', decodeuri: false},
+            decodingDefault: {method: 'GET'}
         });
         return resource;
     });

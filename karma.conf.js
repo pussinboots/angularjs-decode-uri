@@ -19,8 +19,9 @@ module.exports = function (config) {
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-cookies.js',
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js',
 	    'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-mocks.js',
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js',
+	    'public/js/lib/angularjs-decoe-uri.js',
             'public/js/*.js',
-            'public/js/lib/*.js',
             'public/test/**/*.js'
         ],
 

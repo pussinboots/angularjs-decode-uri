@@ -1,10 +1,10 @@
 'use strict';
 
 /* App Module */
-var myModule = angular.module('demoApp', ['Services', 'ngRoute'])
+var myModule = angular.module('demoApp', ['Services', 'ngRoute', 'angularjs-decode-uri'])
 
 myModule.config(function ($routeProvider) {
     $routeProvider
-        .when('/encoding', { templateUrl: 'partials/encoding.html', controller: EncodingCtrl})
-        .otherwise({ redirectTo: '/encoding' });
+        .when('/decoding', { templateUrl: 'partials/decoding.html', controller: DecodingCtrl})
+        .otherwise({ redirectTo: '/decoding' });
 })

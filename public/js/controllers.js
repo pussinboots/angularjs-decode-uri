@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-function EncodingCtrl($scope, EncodingService) {
-        $scope.encodingTrue = EncodingService.encodingTrue({uriParts:"/partial/url"});
-        $scope.encodingFalse = EncodingService.encodingFalse({uriParts:"/partial/url"});
-        $scope.encodingDefault = EncodingService.encodingDefault({uriParts:"/partial/url"});
+function DecodingCtrl($scope, DecodingService) {
+        $scope.decodingTrue = DecodingService.decodingTrue({uriParts:"/partial/url"});
+        $scope.decodingFalse = DecodingService.decodingFalse({uriParts:"/partial/url"});
+        $scope.decodingDefault = DecodingService.decodingDefault({uriParts:"/partial/url"});
 }
