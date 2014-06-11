@@ -9,6 +9,19 @@ AngularJS modul to decode uri params in http definitions. Implements the feature
 
 For the live example click on the heroku badge on the top.
 
+##Install (bower)
+
+* bower install angularjs-decode-uri 
+* added javascript file to your app html file manual or
+```html
+    <script src="(bower_components_folder)/angularjs-decode-uri/public/js/lib/angularjs-decode-uri.js"></script>
+```
+* with bower replace comment 
+```html
+<!-- bower:js -->
+<!-- endbower -->
+```
+
 ##Install (manual)
 
 * download [js file](https://github.com/pussinboots/angularjs-decode-uri/blob/master/public/js/lib/angularjs-decode-uri.js)
