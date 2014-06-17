@@ -1,3 +1,5 @@
+[![Bower version](https://badge.fury.io/bo/angularjs-decode-uri.png)](http://badge.fury.io/bo/angularjs-decode-uri)
+
 ##angularjs-decode-uri
 
 [![Build Status](https://travis-ci.org/pussinboots/angularjs-decode-uri.svg?branch=master)](https://travis-ci.org/pussinboots/angularjs-decode-uri)
